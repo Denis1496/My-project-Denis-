@@ -13,7 +13,7 @@ namespace SortItems
         private int targetCount = 1;
         private int count = 0;
         private bool active = true;
-        public UnityEvent<Cylinder> onCountChanged;
+        public UnityEvent <Cylinder> onCountChanged;
         internal int length;
 
         public void SetCount(int value){
@@ -71,14 +71,17 @@ _material.color = Color.black;
         private void TryGetItem() {
 
             if(_item.Type == type) {  
-            Destroy(_item.gameObject);
-             count++;  
-             onCountChanged.Invoke(this);
+
+            //Destroy(_item.gameObject);
+            _item.OnHideRequest.Invoke();
+            count++;
+            onCountChanged.Invoke(this);
 
              if(count >= targetCount) {
                 _material.color = Color.grey;
                 active = false;
              }
+            
             }
         }
     }

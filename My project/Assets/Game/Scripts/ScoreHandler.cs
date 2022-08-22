@@ -1,5 +1,5 @@
-using UnityEngine;
 using System;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace SortItems
@@ -22,7 +22,8 @@ cylinder.cylinder.onCountChanged.AddListener(onCountChanged);
    }
 }
 
-private void OnDestroy(){
+
+        private void OnDestroy(){
  foreach (var cylinder in _cylinders) {
 
 cylinder.cylinder.onCountChanged.RemoveListener(onCountChanged); 

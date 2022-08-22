@@ -1,13 +1,15 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Events;
 namespace SortItems
 {
     public class DragItem : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler {
         [SerializeField] private float upForce = 50f;
        [SerializeField] private ItemType _type;
-        public ItemType Type { get => _type;}
+       public UnityEvent OnHideRequest;
         private Rigidbody _rigidbody;
         public bool isDraggable { get; private set; }
+        public ItemType Type { get => _type;}
       
         private void Start(){
             _rigidbody = GetComponent <Rigidbody>();
