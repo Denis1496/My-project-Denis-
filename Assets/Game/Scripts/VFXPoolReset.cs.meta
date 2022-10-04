@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: e294faed9d82b054eb28fe6b601fa682
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _vfxPool: {fileID: 11400000, guid: 5c93f70b0cecc974290e0b79d621c946, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{0906bbdf-c8b5-e3f2-2a2e-2a0445a44d7b}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DOTweenPro.Scripts", "DOTweenPro.Scripts.csproj", "{8a615687-a332-d54a-30f2-a778dfef7b7b}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DOTween.Modules", "DOTween.Modules.csproj", "{c6d11634-075a-cfbd-8755-b6e8024e5cf0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DOTweenPro.EditorScripts", "DOTweenPro.EditorScripts.csproj", "{49288063-65bb-a191-209b-0301009645c9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0906bbdf-c8b5-e3f2-2a2e-2a0445a44d7b}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0906bbdf-c8b5-e3f2-2a2e-2a0445a44d7b}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8a615687-a332-d54a-30f2-a778dfef7b7b}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8a615687-a332-d54a-30f2-a778dfef7b7b}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{c6d11634-075a-cfbd-8755-b6e8024e5cf0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{c6d11634-075a-cfbd-8755-b6e8024e5cf0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49288063-65bb-a191-209b-0301009645c9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49288063-65bb-a191-209b-0301009645c9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
