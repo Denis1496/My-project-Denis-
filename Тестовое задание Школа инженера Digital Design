@@ -1,0 +1,48 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        string filePath = @"D:\Projects\bin\Debug\input.txt";
+
+        // Читаем текстовый файл и сохраняем его содержимое в строку.
+        string text = File.ReadAllText(filePath);
+
+        // Разбиваем строку на слова и сохраняем их в массив.
+        string[] words = text.Split(new char[] { ' ', '.', ',', '!', '?', ';', ':', '-', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+
+        // Создаем словарь для хранения количества употреблений слов.
+        Dictionary<string, int> wordCount = new Dictionary<string, int>();
+
+        // Проходим по всем словам в массиве и увеличиваем счетчик для каждого слова.
+        foreach(string word in words)
+        {
+            if (wordCount.ContainsKey(word))
+            {
+                wordCount[word]++;
+            }
+            else
+            {
+                wordCount[word] = 1;
+            }
+        }
+
+        // Сортируем словарь по убыванию количества употреблений слов.
+        var sortedDict = from entry in wordCount orderby entry.Value descending select entry;
+
+        // Записываем результаты в текстовый файл.
+        using (StreamWriter writer = new StreamWriter("output.txt"))
+        {
+            foreach (KeyValuePair<string, int> pair in sortedDict)
+            {
+                writer.WriteLine("{0} - {1}", pair.Key, pair.Value);
+            }
+        }
+    }
+}
