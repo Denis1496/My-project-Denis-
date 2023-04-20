@@ -1,0 +1,32 @@
+1. Сотрудника с максимальной заработной платой:
+
+SELECT * FROM employees WHERE salary = (SELECT MAX(salary) FROM employees);
+
+
+2. Максимальную длину цепочки руководителей по таблице сотрудников (вычислить глубину дерева):
+
+WITH RECURSIVE cte AS (
+    SELECT id, name, manager_id, 1 AS depth
+    FROM employees
+    WHERE manager_id IS NULL
+    UNION ALL
+    SELECT e.id, e.name, e.manager_id, c.depth + 1
+    FROM employees e
+    JOIN cte c ON e.manager_id = c.id
+)
+SELECT MAX(depth) FROM cte;
+
+
+3. Отдел с максимальной суммарной зарплатой сотрудников:
+
+WITH sum_salary AS (
+    SELECT department_id, SUM(salary) salary
+    FROM employees
+    GROUP BY department_id
+)
+SELECT department_id FROM sum_salary WHERE salary = (SELECT MAX(salary) FROM sum_salary);
+
+
+4. Сотрудника, чье имя начинается на «Р» и заканчивается на «н»:
+
+SELECT * FROM employees WHERE name LIKE 'Р%н';
